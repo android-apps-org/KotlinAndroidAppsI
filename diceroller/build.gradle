@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion rootProject.target_sdk_version
+    buildToolsVersion rootProject.build_tools_version
+
+    defaultConfig {
+        applicationId "com.jdemaagd.diceroller"
+        minSdkVersion rootProject.min_sdk_version
+        targetSdkVersion rootProject.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.jvm_target
+    }
+}
+
+dependencies {
+    androidTestImplementation "androidx.test.ext:junit:$droidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$droidx_espresso_core_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$kotlin_core_version"
+    implementation "androidx.appcompat:appcompat:$droidx_appcompat_version"
+    implementation "com.google.android.material:material:$material_design_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    testImplementation "junit:junit:$junit_version"
+}
