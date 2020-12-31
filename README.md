@@ -4,6 +4,8 @@
 
 ## About Me: Android Layouts
 
+## Android Trivia: Navigation
+
 ### Capstone Showcase
 
 - Build a navigable interface consisting of multiple screens of functionality and data
@@ -30,4 +32,17 @@ Consider sketching out possible designs with the components and properties that 
 - Running App: personal interest
 - Fake (Virtual/Remote) Location App:
   - current apps for faking user/device location are horrible
+
+### Capstone Features
+
+```
+It is often said that the best mobile applications are those that are simple, easy to use, and well executed.  
+Often, this involves identifying an MVP or minimal viable product.  
+What features do you consider core to your application idea?  
+Are they secondary or nice to have features?  
+What is truly important to your user? How might those features look?  
+What information will they need to display to the user? 
+What information will the user provide?  
+How do you plan on arranging that information?
+```
 
