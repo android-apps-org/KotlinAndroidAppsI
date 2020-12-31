@@ -1,2 +1,3 @@
+include ':aboutme'
 include ':diceroller'
 rootProject.name = "KotlinAndroidAppsI"

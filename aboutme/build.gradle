@@ -8,16 +8,17 @@ android {
     buildToolsVersion rootProject.build_tools_version
 
     defaultConfig {
-        applicationId "com.jdemaagd.diceroller"
+        applicationId "com.jdemaagd.aboutme"
         minSdkVersion rootProject.min_sdk_version
         targetSdkVersion rootProject.target_sdk_version
         versionCode 1
         versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        dataBinding true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -29,7 +30,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = rootProject.jvm_target
+        jvmTarget = '1.8'
     }
 }
 
@@ -42,6 +43,6 @@ dependencies {
     implementation "androidx.core:core-ktx:$kotlin_core_version"
     implementation "com.google.android.material:material:$material_design_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
+    
     testImplementation "junit:junit:$junit_version"
 }
