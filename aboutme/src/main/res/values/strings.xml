@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="yellow_star">Yellow Star</string>
+    <string name="bio">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Pellentesque ullamcorper nunc commodo tempor consequat.
+        Donec quis orci imperdiet, rutrum quam quis, tempor tellus.
+        Nulla euismod porttitor tincidunt. Morbi rutrum tincidunt augue, sit amet faucibus quam pulvinar in.
+
+        Aenean aliquam convallis sem at commodo. Nunc interdum est at dictum tempor.
+        Suspendisse potenti. Phasellus eget lectus iaculis, condimentum leo eu, fermentum tortor.
+        Quisque vitae lectus a augue porttitor volutpat sit amet non nunc. Sed feugiat tristique turpis.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus.
+        In suscipit volutpat erat, quis posuere dui tempor ac.
+        Etiam ultrices lacus in turpis elementum, vel vestibulum dui ullamcorper.
+
+        In hac habitasse platea dictumst. Praesent ut sapien sit amet orci viverra blandit eget et purus.
+        Nunc at suscipit massa, nec malesuada nulla.
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        In quis consectetur purus. Proin at tristique metus. Morbi cursus scelerisque nisi vitae condimentum.
+        Mauris a blandit turpis, a bibendum magna. In nec velit imperdiet dui bibendum tincidunt.
+        Vestibulum blandit nibh sit amet diam sollicitudin sodales vel ac nunc.
+        Sed et turpis at erat aliquet pharetra. Nulla malesuada fringilla molestie.
+        Donec vel congue libero. Suspendisse efficitur tortor dictum orci maximus, in faucibus eros hendrerit.
+
+        Vivamus ut lectus at eros volutpat elementum.
+        Vestibulum fringilla enim faucibus lorem pellentesque, sit amet volutpat magna ultrices.
+        In congue lacus sed sem pellentesque, ut pulvinar eros sollicitudin.
+        Phasellus euismod mauris et enim volutpat eleifend.
+        Mauris bibendum lorem varius nisl rutrum, id tincidunt mauris mattis.
+        Maecenas imperdiet elementum hendrerit.
+        Cras vehicula, est eu lacinia auctor, lectus diam placerat libero, vel maximus nisi lacus sed est.
+        Vestibulum a eros leo. Nulla dignissim rhoncus felis id placerat.
+        Phasellus scelerisque venenatis ante accumsan egestas. Aliquam eget lectus at tellus dapibus dapibus.
+        Duis vel dignissim lorem, vitae convallis risus.
+        Pellentesque magna nunc, auctor et orci malesuada, semper euismod turpis.
+        Morbi posuere nulla augue, ut vehicula lectus tincidunt eget.
+        Etiam malesuada augue sit amet dui posuere, vitae congue nunc ornare.
+        Quisque sed efficitur ipsum, non vestibulum tellus.
+
+        Mauris vulputate blandit turpis. Quisque rutrum lectus leo, id cursus nunc tristique vel.
+        Quisque efficitur, metus sit amet eleifend faucibus, elit risus pulvinar nisl, non rhoncus felis augue et arcu.
+        Integer faucibus nisi ut semper vestibulum. Duis lacinia nec ipsum ut sodales.
+        Duis vel ante mi. Ut sagittis tristique orci eu vestibulum. Quisque vel consectetur tortor.
+        Nullam et congue lacus, eu iaculis magna. Duis ligula turpis, imperdiet at rutrum sed, venenatis eget eros.
+        Pellentesque ultricies est et vehicula viverra.
+    </string>
+    <string name="get_nick_name">What is your nick name?</string>
+    <string name="done">Done</string>
+
+    <string name="box_one">Box One</string>
+    <string name="box_two">Box Two</string>
+    <string name="box_three">Box Three</string>
+    <string name="box_four">Box Four</string>
+    <string name="box_five">Box Five</string>
+    <string name="how_to_play">How to play</string>
+    <string name="tap_boxes">Tap the screen and buttons</string>
+    <string name="button_red">RED</string>
+    <string name="button_yellow">YELLOW</string>
+    <string name="button_green">GREEN</string>
+
+    <string name="my_bio">Bio</string>
+</resources>
