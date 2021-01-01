@@ -11,24 +11,24 @@
         android:background="@color/gameOverBackground">
 
         <ImageView
-            android:id="@+id/gameOverFragment"
+            android:id="@+id/iv_game_over"
             android:layout_width="wrap_content"
             android:layout_height="362dp"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginEnd="@dimen/horizontal_margin"
             android:layout_marginBottom="8dp"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/tryAgainButton"
+            app:layout_constraintBottom_toTopOf="@+id/btn_try_again"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
-            app:srcCompat="@drawable/try_again" />
+            app:srcCompat="@drawable/try_again"
+            android:contentDescription="@string/cd_game_over" />
 
         <Button
-            android:id="@+id/tryAgainButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_try_again"
+            style="@style/ButtonStyle"
             android:layout_marginStart="@dimen/vertical_margin"
             android:layout_marginTop="@dimen/vertical_margin"
             android:layout_marginEnd="@dimen/vertical_margin"
@@ -36,13 +36,10 @@
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
             android:text="@string/try_again"
-            android:textColor="?colorAccent"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gameOverFragment" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_game_over" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

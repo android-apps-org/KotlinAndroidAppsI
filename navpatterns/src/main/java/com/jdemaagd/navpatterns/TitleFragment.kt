@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.jdemaagd.navpatterns.databinding.FragmentTitleBinding
 
+// App Start Destination on Navigation Graph -->
 class TitleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -15,10 +17,14 @@ class TitleFragment : Fragment() {
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_title, container, false)
 
-        binding.playButton.setOnClickListener { v: View ->
-            // v.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+        // Navigate to GameFragment
+        binding.btnPlay.setOnClickListener {
+            // view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+            Navigation.findNavController(it).navigate(R.id.action_titleFragment_to_gameFragment)
+            // Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
         }
 
+        // Note: let Android know we have menu associated with this Fragment
         setHasOptionsMenu(true)
 
         return binding.root
@@ -30,6 +36,9 @@ class TitleFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Note: leverage Navigation to find AboutFragment on navigation graph
+        //       there was no Action connecting TitleFragment to AboutFragment
+        //       menus can navigate to more than one destination, so navigate directly to destination(s)
         return NavigationUI.onNavDestinationSelected(
             item, requireView().findNavController()) ||
                 super.onOptionsItemSelected(item)

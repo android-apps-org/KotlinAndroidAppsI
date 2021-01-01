@@ -8,11 +8,15 @@
             android:orientation="vertical">
 
             <!-- Title Fragment for App: Start Destination -->
-             <fragment
-                android:id="@+id/titleFragment"
-                android:name="com.jdemaagd.navpatterns.TitleFragment"
+            <!-- NavHostFragment: provided by Navigation, swaps fragments in and out, creates/manages back-stack -->
+            <!--    acts as host for each one of the Fragments in the Activity Navigation Graph -->
+            <fragment
+                android:id="@+id/navHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
 
         </LinearLayout>
 

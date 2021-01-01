@@ -11,22 +11,18 @@
         android:background="@color/youWinBackground">
 
         <Button
-            android:id="@+id/nextMatchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_next_match"
+            style="@style/ButtonStyle"
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
-            android:text="Next Match"
-            android:textColor="@color/youWinDark"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold"
+            android:text="@string/next_match"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_winner" />
 
         <ImageView
-            android:id="@+id/youWinImage"
+            android:id="@+id/iv_winner"
             android:layout_width="0dp"
             android:layout_height="@dimen/game_over_height"
             android:layout_marginStart="@dimen/horizontal_margin"
@@ -34,11 +30,12 @@
             android:layout_marginEnd="@dimen/horizontal_margin"
             android:layout_marginBottom="@dimen/vertical_margin"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next_match"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/you_win" />
+            app:srcCompat="@drawable/you_win"
+            android:contentDescription="@string/cd_winner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -31,7 +31,7 @@ Consider sketching out possible designs with the components and properties that 
 
 - Running App: personal interest
 - Fake (Virtual/Remote) Location App:
-  - current apps for faking user/device location are horrible
+  - current apps for faking user/device location did not provide intuitive UI Experience
 
 ### Capstone Features
 
