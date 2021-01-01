@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/titleFragment">
+    app:startDestination="@id/title_fragment">
 
     <fragment
-        android:id="@+id/titleFragment"
+        android:id="@+id/title_fragment"
         android:name="com.jdemaagd.navpatterns.TitleFragment"
         android:label="TitleFragment" >
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
     </fragment>
 
     <fragment
@@ -21,6 +23,8 @@
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment"
             app:destination="@id/gameOverFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
         <action
@@ -37,8 +41,16 @@
         <action
             android:id="@+id/action_gameWonFragment_to_gameFragment"
             app:destination="@id/gameFragment"
-            app:popUpTo="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/title_fragment"
             app:popUpToInclusive="false" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
     </fragment>
 
     <fragment
@@ -48,7 +60,9 @@
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
             app:destination="@id/gameFragment"
-            app:popUpTo="@id/titleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/title_fragment"
             app:popUpToInclusive="false" />
     </fragment>
 
@@ -57,5 +71,10 @@
         android:name="com.jdemaagd.navpatterns.AboutFragment"
         android:label="@string/android_trivia"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rules_fragment"
+        android:name="com.jdemaagd.navpatterns.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 
 </navigation>

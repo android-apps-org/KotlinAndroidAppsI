@@ -20,7 +20,8 @@ class GameOverFragment : Fragment() {
 
         // Note: in layout editor popUpTo titleFragment non-inclusive
         binding.btnTryAgain.setOnClickListener {
-            it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+            // it.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
+            it.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
 
         return binding.root

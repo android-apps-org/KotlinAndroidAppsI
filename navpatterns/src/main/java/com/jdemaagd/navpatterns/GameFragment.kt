@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.jdemaagd.navpatterns.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -84,17 +85,13 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     } else {
                         // Winner!  Navigate to gameWonFragment
-                        // view.findViewById(R.id.action_gameFragment_to_gameWonFragment)
-
                         // Note: in layout editor popUpTo gameFragment inclusive
-                        Navigation.findNavController(view).navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment
-                    // view.findViewById(R.id.action_gameFragment_to_gameOverFragment)
-
                     // Note: in layout editor popUpTo gameFragment inclusive
-                    Navigation.findNavController(view).navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }

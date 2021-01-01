@@ -19,9 +19,7 @@ class TitleFragment : Fragment() {
 
         // Navigate to GameFragment
         binding.btnPlay.setOnClickListener {
-            // view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
-            Navigation.findNavController(it).navigate(R.id.action_titleFragment_to_gameFragment)
-            // Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
+            it.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
 
         // Note: let Android know we have menu associated with this Fragment
