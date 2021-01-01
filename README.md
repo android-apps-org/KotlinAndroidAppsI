@@ -6,6 +6,8 @@
 
 ## Android Trivia: Navigation
 
+## Dessert Pusher: Activity/Fragment Lifecycle
+
 ### Capstone Showcase
 
 - Build a navigable interface consisting of multiple screens of functionality and data
@@ -46,3 +48,6 @@ What information will the user provide?
 How do you plan on arranging that information?
 ```
 
+### adb Commands
+
+$ adb shell am kill com.jdemaagd.dessertpusher
