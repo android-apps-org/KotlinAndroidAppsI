@@ -1,11 +1,14 @@
 package com.jdemaagd.dessertpusher
 
 import android.os.Handler
+
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+
 import timber.log.Timber
 
+// Note: implement LifecycleObserver to give DessertTimer ability watch for lifecycle changes
 class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
 
     var secondsCount = 0
@@ -14,7 +17,7 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
     private lateinit var runnable: Runnable
 
     init {
-        // Note: DessertTimer is going to observe MainActivity's lifecycle
+        // Note: DessertTimer is going to observe MainActivity lifecycle
         lifecycle.addObserver(this)
     }
 

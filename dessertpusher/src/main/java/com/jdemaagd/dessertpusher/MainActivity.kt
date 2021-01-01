@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
+
 import com.jdemaagd.dessertpusher.databinding.ActivityMainBinding
+
 import timber.log.Timber
 
 const val KEY_REVENUE = "revenue_key"
@@ -22,7 +25,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     private var dessertsSold = 0
 
     private lateinit var dessertTimer: DessertTimer
-
     private lateinit var binding: ActivityMainBinding
 
     data class Dessert(val imageId: Int, val price: Int, val startProductionAmount: Int)
@@ -57,6 +59,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             onDessertClicked()
         }
 
+        // Note: give DessertTimer this Activity lifecycle to observe
         dessertTimer = DessertTimer(this.lifecycle)
 
         if (savedInstanceState != null) {
@@ -77,7 +80,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         Timber.i("onStart called")
 
         // Note: let component startTimer when notified by LifecycleOwner
-        // dessertTimer.startTimer()
+        //dessertTimer.startTimer()
     }
 
     override fun onResume() {
@@ -95,7 +98,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         Timber.i("onStop called")
 
         // Note: let component stopTimer when notified by LifecycleOwner
-        // dessertTimer.stopTimer()
+        //dessertTimer.stopTimer()
     }
 
     override fun onDestroy() {
@@ -137,7 +140,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             if (dessertsSold >= dessert.startProductionAmount) {
                 newDessert = dessert
             }
-
             else break
         }
 

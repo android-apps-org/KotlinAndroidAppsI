@@ -35,3 +35,16 @@
   - remove plug in hardware keyboard
   - device rotation
 
+## Share Dialog Example
+
+- Opening share popup puts Activity in onPause state
+- Clicking outside share dialog puts Activity in onResume state
+- Not same as navigating away from Activity
+  - Activity is still on screen (partially) and considered in foreground
+  - this is what differentiates onStop/onStart from onResume/onPause
+  - onResume/onPause have to do with focus
+    - onResume called when Activity has focus
+    - onPause called when Activity loses focus
+- onStart called when Activity becomes visible
+- onStop called when Activity goes off screen
+
