@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.jdemaagd.navpatterns.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
@@ -14,9 +16,10 @@ class GameFragment : Fragment() {
             val text: String,
             val answers: List<String>)
 
-    // The first answer is the correct one.  We randomize the answers before showing the text.
-    // All questions must have four answers.  We'd want these to contain references to string
-    // resources so we could internationalize. (or better yet, not define the questions in code...)
+    // first answer is correct one, randomize answers before showing text
+    // questions must have four answers
+    // should contain references to string resources to internationalize
+    // (or better yet, not define the questions in code...)
     private val questions: MutableList<Question> = mutableListOf(
             Question(text = "What is Android Jetpack?",
                     answers = listOf("all of these", "tools", "documentation", "libraries")),
@@ -53,26 +56,26 @@ class GameFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(
                 inflater, R.layout.fragment_game, container, false)
 
-        // Shuffles the questions and sets the question index to the first question.
+        // shuffles questions and sets question index to first question
         randomizeQuestions()
 
-        // Bind this fragment class to the layout
+        // bind this fragment class to the layout
         binding.game = this
 
-        // Set the onClickListener for the submitButton
-        binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        // determine state of game to handle navigation
+        binding.btnSubmit.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
         { view: View ->
-            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+            val checkedId = binding.rgQuestion.checkedRadioButtonId
             // Do nothing if nothing is checked (id == -1)
             if (-1 != checkedId) {
                 var answerIndex = 0
                 when (checkedId) {
-                    R.id.secondAnswerRadioButton -> answerIndex = 1
-                    R.id.thirdAnswerRadioButton -> answerIndex = 2
-                    R.id.fourthAnswerRadioButton -> answerIndex = 3
+                    R.id.rb_secondAnswer -> answerIndex = 1
+                    R.id.rb_thirdAnswer -> answerIndex = 2
+                    R.id.rb_fourthAnswer -> answerIndex = 3
                 }
-                // The first answer in the original question is always the correct one, so if our
-                // answer matches, we have the correct answer.
+                // first answer in original question is always correct one,
+                // so if answer matches, we have correct answer
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
                     questionIndex++
                     // Advance to the next question
@@ -81,10 +84,14 @@ class GameFragment : Fragment() {
                         setQuestion()
                         binding.invalidateAll()
                     } else {
-                        // We've won!  Navigate to the gameWonFragment.
+                        // Winner!  Navigate to gameWonFragment
+                        // Note: in layout editor popUpTo gameFragment inclusive
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
-                    // Game over! A wrong answer sends us to the gameOverFragment.
+                    // Game over! A wrong answer sends us to the gameOverFragment
+                    // Note: in layout editor popUpTo gameFragment inclusive
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
@@ -99,8 +106,8 @@ class GameFragment : Fragment() {
         setQuestion()
     }
 
-    // Sets the question and randomizes the answers.  This only changes the data, not the UI.
-    // Calling invalidateAll on the FragmentGameBinding updates the data.
+    // sets question and randomizes answers, only changes the data, not the UI
+    // calling invalidateAll on the FragmentGameBinding updates the data
     private fun setQuestion() {
         currentQuestion = questions[questionIndex]
         // randomize the answers into a copy of the array

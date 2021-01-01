@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/aboutImage"
+            android:id="@+id/iv_about"
             android:layout_width="0dp"
             android:layout_height="@dimen/image_header_height"
             android:layout_marginStart="@dimen/horizontal_margin"
@@ -21,10 +21,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/about_android_trivia" />
+            app:srcCompat="@drawable/about_android_trivia"
+            android:contentDescription="@string/cd_about" />
 
         <TextView
-            android:id="@+id/rulesText"
+            android:id="@+id/tv_rules"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/horizontal_margin"
@@ -34,7 +35,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aboutImage" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_about" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
