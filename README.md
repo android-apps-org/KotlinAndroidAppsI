@@ -8,6 +8,8 @@
 
 ## Dessert Pusher: Activity/Fragment Lifecycle
 
+## GuessIt: App Architecture
+
 ### Capstone Showcase
 
 - Build a navigable interface consisting of multiple screens of functionality and data
@@ -48,6 +50,15 @@ What information will the user provide?
 How do you plan on arranging that information?
 ```
 
+###  Capstone Component
+
+```
+The MVVM Pattern is one of the primary architecture strategies for Android development.
+Think about the core logic required for your application?
+What logic might those features utilize at the ViewModel layer and then supply to your View?
+```
+
 ### adb Commands
 
 $ adb shell am kill com.jdemaagd.dessertpusher
+

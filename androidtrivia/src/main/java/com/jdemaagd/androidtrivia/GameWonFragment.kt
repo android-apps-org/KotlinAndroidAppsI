@@ -22,9 +22,9 @@ class GameWonFragment : Fragment() {
                 inflater, R.layout.fragment_game_won, container, false)
 
         // Note: in layout editor popUpTo titleFragment non-inclusive
-        binding.btnNextMatch.setOnClickListener {
-            // it.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
-            it.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
+        binding.btnNextMatch.setOnClickListener { view ->
+            // view.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
+            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
 
         // Note: let Android know a menu is associated with this Fragment

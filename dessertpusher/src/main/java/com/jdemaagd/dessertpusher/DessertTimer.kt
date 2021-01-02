@@ -1,6 +1,7 @@
 package com.jdemaagd.dessertpusher
 
 import android.os.Handler
+import android.os.Looper
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -13,7 +14,7 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
 
     var secondsCount = 0
 
-    private var handler = Handler()
+    private var handler = Handler(Looper.getMainLooper())
     private lateinit var runnable: Runnable
 
     init {
