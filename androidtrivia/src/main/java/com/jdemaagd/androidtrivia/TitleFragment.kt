@@ -18,8 +18,8 @@ class TitleFragment : Fragment() {
             inflater, R.layout.fragment_title, container, false)
 
         // Navigate to GameFragment
-        binding.btnPlay.setOnClickListener {
-            it.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+        binding.btnPlay.setOnClickListener { view ->
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
 
         // Note: let Android know a menu is associated with this Fragment
@@ -37,8 +37,7 @@ class TitleFragment : Fragment() {
         // Note: leverage Navigation to find AboutFragment on navigation graph
         //       there was no Action connecting TitleFragment to AboutFragment
         //       menus can navigate to more than one destination, so navigate directly to destination(s)
-        return NavigationUI.onNavDestinationSelected(
-            item, requireView().findNavController()) ||
-                super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(item,
+            requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 }
