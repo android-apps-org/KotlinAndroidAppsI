@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/title_destination"
-        android:name="com.jdemaagd.guessit.screens.TitleFragment"
+        android:name="com.jdemaagd.guessit.screens.title.TitleFragment"
         android:label="title_fragment"
         tools:layout="@layout/fragment_title">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/game_destination"
-        android:name="com.jdemaagd.guessit.screens.GameFragment"
+        android:name="com.jdemaagd.guessit.screens.game.GameFragment"
         android:label="game_fragment"
         tools:layout="@layout/fragment_game">
         <action
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/score_destination"
-        android:name="com.jdemaagd.guessit.screens.ScoreFragment"
+        android:name="com.jdemaagd.guessit.screens.score.ScoreFragment"
         android:label="score_fragment"
         tools:layout="@layout/fragment_score">
         <action

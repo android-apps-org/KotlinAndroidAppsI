@@ -1,0 +1,18 @@
+package com.jdemaagd.guessit.screens
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.jdemaagd.guessit.screens.score.ScoreViewModel
+
+@Suppress("UNCHECKED_CAST")
+class ViewModelFactory(private val finalScore: Int) : ViewModelProvider.Factory {
+
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+
+        if (modelClass.isAssignableFrom(ScoreViewModel::class.java)) {
+            return ScoreViewModel(finalScore) as T
+        }
+
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}

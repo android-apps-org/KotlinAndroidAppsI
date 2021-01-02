@@ -1,4 +1,4 @@
-package com.jdemaagd.guessit.screens
+package com.jdemaagd.guessit.screens.title
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +23,7 @@ class TitleFragment : Fragment() {
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_title, container, false)
 
-        binding.playGameButton.setOnClickListener {
+        binding.btnPlayGame.setOnClickListener {
             findNavController().navigate(TitleFragmentDirections.actionTitleToGame())
         }
 
