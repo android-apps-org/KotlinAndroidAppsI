@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.dessertButton.setOnClickListener {
+        binding.ibDessert.setOnClickListener {
             onDessertClicked()
         }
 
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         binding.revenue = revenue
         binding.amountSold = dessertsSold
 
-        binding.dessertButton.setImageResource(currentDessert.imageId)
+        binding.ibDessert.setImageResource(currentDessert.imageId)
     }
 
     override fun onStart() {
@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
         if (newDessert != currentDessert) {
             currentDessert = newDessert
-            binding.dessertButton.setImageResource(newDessert.imageId)
+            binding.ibDessert.setImageResource(newDessert.imageId)
         }
     }
 

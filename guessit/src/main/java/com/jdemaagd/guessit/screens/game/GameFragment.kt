@@ -41,6 +41,7 @@ class GameFragment : Fragment() {
         binding.gameViewModel = gameViewModel
         binding.lifecycleOwner = this               // Note: LiveData binding
 
+        // Note: observe this Fragment Lifecycle-owner to notify of game-end event
         gameViewModel.eventGameFinish.observe(viewLifecycleOwner, { isFinished ->
             if (isFinished) {
                 val currentScore = gameViewModel.score.value ?: 0
@@ -52,6 +53,7 @@ class GameFragment : Fragment() {
             }
         })
 
+        // Note: observe this Fragment Lifecycle-owner to notify of buzz events
         gameViewModel.eventBuzz.observe(viewLifecycleOwner, { buzzType ->
             if (buzzType != GameViewModel.BuzzType.NO_BUZZ) {
                 buzz(buzzType.pattern)

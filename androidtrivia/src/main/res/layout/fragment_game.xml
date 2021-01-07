@@ -5,7 +5,6 @@
     tools:context="com.jdemaagd.androidtrivia.GameFragment">
 
     <data>
-
         <variable
             name="game"
             type="com.jdemaagd.androidtrivia.GameFragment" />
