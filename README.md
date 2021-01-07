@@ -33,10 +33,6 @@ As you go through the lesson, think about how you might apply these concepts to 
 Consider sketching out possible designs with the components and properties that might be used.
 ```
 
-- Running App: personal interest
-- Fake (Virtual/Remote) Location App:
-  - current apps for faking user/device location did not provide intuitive UI Experience
-
 ### Capstone Features
 
 ```

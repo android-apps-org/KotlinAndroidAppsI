@@ -10,29 +10,29 @@ import com.jdemaagd.aboutme.databinding.ActivityBioBinding
 
 class BioActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: ActivityBioBinding
+    private lateinit var binding: ActivityBioBinding
 
     private val myName: Name = Name("Jon DeMaagd", "Nick Name..")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_bio)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_bio)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
 
-        mBinding.myName = myName
+        binding.myName = myName
 
-        mBinding.btnDone.setOnClickListener {
-            addNickName(it)
+        binding.btnDone.setOnClickListener { view ->
+            addNickName(view)
         }
     }
 
     private fun addNickName(view: View) {
-        mBinding.apply {
-            tvNickName.text = mBinding.etNickName.text
+        binding.apply {
+            tvNickName.text = this.etNickName.text
             invalidateAll()
             etNickName.visibility = View.GONE
             btnDone.visibility = View.GONE
