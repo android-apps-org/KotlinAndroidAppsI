@@ -14,7 +14,7 @@ import com.jdemaagd.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mBinding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     lateinit var layout: ConstraintLayout
     lateinit var boxOne: View
@@ -28,17 +28,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        layout = mBinding.clLayout
-        boxOne = mBinding.tvBoxOne
-        boxTwo = mBinding.tvBoxTwo
-        boxThree = mBinding.tvBoxThree
-        boxFour = mBinding.tvBoxFour
-        boxFive = mBinding.tvBoxFive
-        greenBtn = mBinding.btnGreen
-        redBtn = mBinding.btnRed
-        yellowBtn = mBinding.btnYellow
+        layout = binding.clLayout
+        boxOne = binding.tvBoxOne
+        boxTwo = binding.tvBoxTwo
+        boxThree = binding.tvBoxThree
+        boxFour = binding.tvBoxFour
+        boxFive = binding.tvBoxFive
+        greenBtn = binding.btnGreen
+        redBtn = binding.btnRed
+        yellowBtn = binding.btnYellow
 
         setListeners();
     }
